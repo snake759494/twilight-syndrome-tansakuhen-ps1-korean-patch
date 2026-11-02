@@ -99,6 +99,14 @@ def main():
                 j=a+0xc; ins=struct.unpack_from('<I',b,j-base)[0]
                 assert ins>>26==3,(cap,hex(j))
                 exe_patch[cap][j]=struct.pack('<I',(3<<26)|((kfont.EXPAND_ADDR>>2)&0x3ffffff))
+    # {8d0N} 화자 이름 들여쓰기: 한글 이름이 원본보다 넓어 값이 음수가 되므로 부호 있는 읽기(lbu->lb)로 변경
+    for cap in CAPS:
+        b=open('orig/%s.EXE'%cap,'rb').read(); base=struct.unpack_from('<I',b,0x18)[0]-0x800
+        i=b.find(struct.pack('<I',0x00511023)); cs=consts('orig/%s.EXE'%cap)
+        A=[v for a,m,v,h in cs if a==base+i+8][0]
+        L=[a for a,m,v,h in cs if v==A and m=='lbu']; assert len(L)==1,(cap,L)
+        ins=struct.unpack_from('<I',b,L[0]-base)[0]; assert ins>>26==0x24
+        exe_patch[cap][L[0]]=struct.pack('<I',(ins&0x03ffffff)|(0x20<<26))
     # 디스크 쓰기
     shutil.copyfile(ORIG,OUT)
     w=Writer(OUT)

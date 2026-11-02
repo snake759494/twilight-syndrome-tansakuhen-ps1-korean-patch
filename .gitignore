@@ -19,3 +19,4 @@ text/kop/
 # 파이썬
 __pycache__/
 *.pyc
+*.npz

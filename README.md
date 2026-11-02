@@ -1,10 +1,10 @@
 # 트와일라잇 신드롬 ~탐색편~ PS1 한글패치
 
-PS1 일본판 **トワイライトシンドローム ～探索編～ (SLPS-00102)**용 비공식 한국어 패치입니다. 시작의 소문부터 또 하나의 소문까지 **모든 챕터의 대사·선택지**를 한국어로 바꿨습니다. **타이틀 메뉴, 세로쓰기 챕터 제목, 챕터 타이틀 카드, 장소 이름, 메모리 카드 안내, 게임오버 메시지 같은 그림 글자**도 한글로 다시 그렸습니다. 현재 배포판은 **v1.0 (2026-10-31)**입니다.
+PS1 일본판 **トワイライトシンドローム ～探索編～ (SLPS-00102)**용 비공식 한국어 패치입니다. 시작의 소문부터 또 하나의 소문까지 **모든 챕터의 대사·선택지**를 한국어로 바꿨습니다. **타이틀 메뉴, 세로쓰기 챕터 제목, 챕터 타이틀 카드, 장소 이름, 메모리 카드 안내, 게임오버 메시지 같은 그림 글자**도 한글로 다시 그렸습니다. 현재 배포판은 **v1.1 (2026-11-02)**입니다.
 
 [패치 다운로드](https://github.com/snake759494/twilight-syndrome-tansakuhen-ps1-korean-patch/releases/latest) · [기술 설명](docs/TECHNICAL.md) · [재빌드](docs/BUILD.md) · [변경 기록](CHANGELOG.md) · [권리 안내](RIGHTS.md)
 
-릴리즈 첨부 파일은 한글패치 **TwilightSyndrome_Tansakuhen_PS1_KO_v1.0.xdelta**뿐입니다. 저장소에는 제작 소스와 한국어 번역만 공개합니다. 원본·완성 디스크 이미지, 추출한 게임 파일, 일본어 원문, 글꼴 파일, 외부 실행 파일은 포함하지 않습니다. GitHub가 자동으로 만드는 Source code ZIP/TAR는 저장소 소스를 압축한 것이며 게임 파일이 아닙니다.
+릴리즈 첨부 파일은 한글패치 **TwilightSyndrome_Tansakuhen_PS1_KO_v1.1.xdelta**뿐입니다. 저장소에는 제작 소스와 한국어 번역만 공개합니다. 원본·완성 디스크 이미지, 추출한 게임 파일, 일본어 원문, 글꼴 파일, 외부 실행 파일은 포함하지 않습니다. GitHub가 자동으로 만드는 Source code ZIP/TAR는 저장소 소스를 압축한 것이며 게임 파일이 아닙니다.
 
 ## 게임 소개 및 대상 버전
 
@@ -22,11 +22,11 @@ PS1 일본판 **トワイライトシンドローム ～探索編～ (SLPS-00102
 | **원본 BIN MD5** | `94de7fb58c36e70de87124d471eae1b8` |
 | 원본 BIN SHA-1 | `7f11266e64793184dea33ebef291cdd9c68d3c2d` |
 | 원본 BIN SHA-256 | `44f292433547ee8b478f8103e78cd3a00acae7e72c8ac414fda931c09d719364` |
-| xdelta 파일 크기 | 854,469 바이트 |
-| xdelta SHA-256 | `afd7fbffc48cdfb687be9960a524f61afd5f12297e39a00ac845b0e7655d4c01` |
+| xdelta 파일 크기 | 854,772 바이트 |
+| xdelta SHA-256 | `f03032cb20818f505e864ec4f70418f37cb652936f428f98fdd428270fcfd4a6` |
 | 적용 결과 BIN 크기 | 636,488,832 바이트 (원본과 같음) |
-| 적용 결과 BIN SHA-1 | `e799dfbd76019b6c8e383148da0b35ff4379dc0a` |
-| 적용 결과 BIN SHA-256 | `ed9dda7b0e7e9def7e8276ffb7bf7561350e4619277a8c344e0cb32824f51bbf` |
+| 적용 결과 BIN SHA-1 | `0736ff1c517fe9db4137bcc5faae48bfffc0f117` |
+| 적용 결과 BIN SHA-256 | `16ac03f6d5290f760bf7cfdede580a3fb603d0da883f0fb4a6b0677f7e912d9c` |
 
 원본 게임 파일은 사용자가 직접 준비해야 합니다.
 
@@ -42,7 +42,7 @@ Get-FileHash -Algorithm MD5 -LiteralPath '.\Twilight Syndrome - Tansaku-hen (Jap
 
 ### xdelta UI 사용
 
-1. 릴리즈에서 `TwilightSyndrome_Tansakuhen_PS1_KO_v1.0.xdelta`를 받습니다.
+1. 릴리즈에서 `TwilightSyndrome_Tansakuhen_PS1_KO_v1.1.xdelta`를 받습니다.
 2. xdelta3 패치를 지원하는 도구에서 **Apply Patch** 기능을 엽니다.
 3. **Patch**에는 xdelta 파일을, **Source File**에는 해시가 일치하는 원본 `.bin`을 선택합니다.
 4. **Output File**에는 새 파일 이름을 지정합니다(예: `Twilight Syndrome - Tansaku-hen (Korean).bin`).
@@ -59,13 +59,13 @@ xdelta는 호환성을 위해 압축·2차 압축·파일 경로 헤더 없이 �
 ### 명령줄 사용
 
 ```powershell
-.\xdelta3.exe -d -s '.\Twilight Syndrome - Tansaku-hen (Japan).bin' '.\TwilightSyndrome_Tansakuhen_PS1_KO_v1.0.xdelta' '.\Twilight Syndrome - Tansaku-hen (Korean).bin'
+.\xdelta3.exe -d -s '.\Twilight Syndrome - Tansaku-hen (Japan).bin' '.\TwilightSyndrome_Tansakuhen_PS1_KO_v1.1.xdelta' '.\Twilight Syndrome - Tansaku-hen (Korean).bin'
 ```
 
 해시를 자동으로 검사하고 CUE까지 만들어 주는 도구도 있습니다. Python 3과 xdelta3가 필요하며, 같은 이름의 출력 파일이 이미 있으면 덮어쓰지 않습니다.
 
 ```powershell
-python tools/apply_release.py --xdelta '.\xdelta3.exe' --source '.\Twilight Syndrome - Tansaku-hen (Japan).bin' --patch '.\TwilightSyndrome_Tansakuhen_PS1_KO_v1.0.xdelta' --output '.\Twilight Syndrome - Tansaku-hen (Korean).bin'
+python tools/apply_release.py --xdelta '.\xdelta3.exe' --source '.\Twilight Syndrome - Tansaku-hen (Japan).bin' --patch '.\TwilightSyndrome_Tansakuhen_PS1_KO_v1.1.xdelta' --output '.\Twilight Syndrome - Tansaku-hen (Korean).bin'
 ```
 
 ### 실행
